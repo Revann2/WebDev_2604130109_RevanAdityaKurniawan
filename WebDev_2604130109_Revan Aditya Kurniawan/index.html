@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Profil - Revan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header dan navigasi -->
+    <header>
+        <a href="#home" class="logo">Revan Aditya</a>
+        
+
+        <nav class="navbar">
+            <span class="nav-indicator"></span>
+            <a href="#home" class="active">Home</a>
+            <a href="#skill">Skills</a>
+            <a href="#project">Project</a>
+            <a href="#documentation">Documentation</a>
+        </nav>
+    </header>
+
+    <!-- Profil utama -->
+    <section class="home" id="home">
+
+        <div class="home-img">
+            <img src="aset/GWE.jpeg" alt="Foto profil Revan">
+<div class="social-icons">
+    <a href="https://www.linkedin.com/in/revan-aditya-kurniawan-a89a58422/"
+       target="_blank" rel="noopener noreferrer">
+        <img src="aset/logo linkedin.jpg" alt="LinkedIn">
+    </a>
+
+    <a href="https://www.instagram.com/forvryl/"
+       target="_blank" rel="noopener noreferrer">
+        <img src="aset/Instagram.jpg" alt="Instagram">
+    </a>
+
+    <a href="https://github.com/Revann2"
+       target="_blank" rel="noopener noreferrer">
+        <img src="aset/github.jpg" alt="GitHub">
+    </a>
+</div>
+    </div>
+           
+        </div>
+        
+
+        <div class="home-section">
+            <h1>About Me, <span>Revan</span></h1>
+
+            <h3 class="typing-text">
+                As Backend Developer
+            </h3>
+
+            <p class="profile">
+                Perkenalkan, namaku Revan Aditya Kurniawan,
+                Mahasiswa baru dari Universitas Negeri Semarang
+                yang memiliki ketertarikan pada bidang teknologi,
+                khususnya pada coding seperti, sistem, database, serta IoT
+                (Arduino dan ESP32).
+            </p>
+    </section>
+
+    <!-- Hobbies -->
+   <section class="content-section" id="skill">
+    <h2>Skills</h2>
+
+    <ul>
+        <li>Programming
+            <ol>
+                <li>Arduino (C++)</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>HTML &amp; CSS (dasar)</li>
+            </ol>
+        </li>
+        <li>Networking</li>
+        <li>Problem Solving</li>
+        <li>IoT</li>
+    </ul>
+</section>
+
+    <!-- Skills -->
+    <section class="content-section" id="project">
+        <h2>Project</h2>
+        <ul>
+            <li>sistem irigasi otomatisasi berbasis IoT</li>
+            <li>sistem alarm parkir kendaraan menggunakan sensor ultrasonik</li>
+            <li>sistem kasir kedai kopi (level dasar menggunakan C++, API, HTML) </li>
+        </ul>
+    </section>
+
+
+<!-- Documentation Gallery -->
+<section class="content-section documentation" id="documentation">
+    <div class="documentation-header">
+        <div>
+            <p class="section-label">MY JOURNEY</p>
+            <h2>Dokumentasi</h2>
+            <p class="documentation-desc">
+                Kumpulan dokumentasi kegiatan, proyek, dan perjalanan belajar saya.
+            </p>
+        </div>
+        <span class="gallery-count" id="galleryCount">01 — 06</span>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+        <!--Dokumentasi 1: Gambar -->
+        <article class="gallery-card">
+            <img src="aset/profile.jpeg" alt="Dokumentasi profil">
+            <div class="gallery-info">
+                <span class="gallery-category">PROFILE</span>
+                <h3>My Profile</h3>
+                <p>Perjalanan dan pengembangan diri.</p>
+            </div>
+        </article>
+
+        <!-- Dokumentasi 2: Gambar -->
+        <article class="gallery-card">
+            <img src="aset/project1.jpeg" alt="Dokumentasi proyek IoT">
+            <div class="gallery-info">
+                <span class="gallery-category">PROJECT</span>
+                <h3>IoT Project</h3>
+                <p>Eksplorasi mikrokontroler dan sensor.</p>
+            </div>
+        </article>
+
+        <!-- Dokumentasi 3: Video -->
+        <article class="gallery-card">
+            <video controls preload="metadata">
+                <source src="aset/video1.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-info">
+                <span class="gallery-category">VIDEO</span>
+                <h3>Project Showcase</h3>
+                <p>Video demonstrasi proyek.</p>
+            </div>
+        </article>
+
+        <!-- Dokumentasi 4: Gambar -->
+        <article class="gallery-card">
+            <img src="aset/previewcode.jpeg" alt="Dokumentasi kegiatan">
+            <div class="gallery-info">
+                <span class="gallery-category">ACTIVITY</span>
+                <h3>Preview</h3>
+                <p>Gambaran coding</p>
+            </div>
+        </article>
+
+        <!-- Dokumentasi 5: Video -->
+        <article class="gallery-card">
+            <video controls preload="metadata">
+                <source src="aset/bts.mp4" type="video/mp4">
+                Browser lu tidak mendukung video.
+            </video>
+            <div class="gallery-info">
+                <span class="gallery-category">VIDEO</span>
+                <h3>Behind the Scenes</h3>
+                <p>Cuplikan proses pengerjaan.</p>
+            </div>
+        </article>
+
+
+
+    </div>
+
+    <div class="gallery-pagination">
+        <span id="pageIndicator">PAGE 01 / 02</span>
+
+        <div class="gallery-buttons">
+            <button id="prevPage" type="button" disabled>
+                ← Previous
+            </button>
+            <button id="nextPage" type="button">
+                Next →
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Revan Aditya Kurniawan</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

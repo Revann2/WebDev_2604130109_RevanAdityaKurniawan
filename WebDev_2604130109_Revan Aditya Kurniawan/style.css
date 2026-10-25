@@ -1,0 +1,436 @@
+
+/*variabel color*/
+:root {
+    --primary: oklab(70.879% -0.08795 -0.11398 / 0.942);
+    --primary-hover: #1D4ED8;
+    --background: #F9FAFB;
+    --surface: #FFFFFF;
+    --soft-blue: #EFF6FF;
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+}
+
+/*utk reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+/* header*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+    background-color: var(--surface);
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px;
+    border: 1px solid #E5E7EB;
+    border-radius: 50px;
+    background: #FFFFFF;
+}
+
+/* Link navbar */
+.navbar a {
+    position: relative;
+    z-index: 1;
+
+    padding: 14px 24px;
+    border-radius: 50px;
+
+    color: #111827;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+}
+
+/* Warna teks menu aktif / di-hover */
+.navbar a.active,
+.navbar a.hovered {
+    color: var(--text-primary);
+}
+
+/* Satu background biru yang bergerak */
+.nav-indicator {
+    position: absolute;
+    top: 0px;
+    left: 6px;
+
+    width: 0;
+    height: 0;
+
+    border-radius: 50px;
+    background: var(--primary);
+
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+}
+
+
+body:has(#home:target) nav a[href="#home"],
+body:has(#skill:target) nav a[href="#skill"], 
+body:has(#pencapaian:target) nav a[href="#pencapaian"],
+    body:has(#dokumentasi:target) nav a[href="#dokumentasi"]{
+    background-color: oklab(70.879% -0.08795 -0.11398 / 0.942);
+    color: #FFFFFF;
+}
+
+/*home dan profile*/
+.home {
+    min-height: 85vh;
+    padding: 60px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+.home-img img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+    box-shadow: 0 0 0 10px var(--soft-blue);
+}
+
+/* Container logo medsos */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Khusus logo medsos */
+.social-icons img {
+    width: 37px;
+    height: 37px;
+    object-fit: contain;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.2s ease;
+}
+
+/* Efek hover logo */
+.social-icons img:hover {
+    transform: translateY(-5px);
+}
+
+.home-section {
+    max-width: 600px;
+}
+
+.home-section h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.home-section h1 span {
+    color: var(--primary);
+}
+
+.typing-text {
+    color: var(--primary);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.profile {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+/*button*/
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--surface);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/*project, skills, dokumentation*/
+.content-section {
+    max-width: 1000px;
+    margin: 0 auto 35px;
+    padding: 35px;
+    background-color: var(--surface);
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+}
+
+.content-section h2 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.content-section p {
+    color: var(--text-secondary);
+}
+
+.list {
+    margin-left: 25px;
+}
+
+
+/* DOCUMENTATION GALLERY */
+.documentation {
+    width: 100%;
+    min-height: 100vh;
+    padding: 110px 8% 50px;
+    box-sizing: border-box;
+    background: #F9FAFB;
+    display: flex;
+    flex-direction: column;
+}
+
+.documentation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.section-label,
+.gallery-category {
+    color: #2563EB;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.documentation-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #111827;
+    margin: 8px 0;
+}
+
+.documentation-desc {
+    color: #6B7280;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.gallery-count {
+    color: #6B7280;
+    font-size: 1.4rem;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    flex: 1;
+}
+
+.gallery-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgb(17 24 39 / 6%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgb(17 24 39 / 12%);
+}
+
+.gallery-card > img,
+.gallery-card > video {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #E5E7EB;
+}
+
+.gallery-info {
+    padding: 20px;
+}
+
+.gallery-category {
+    font-size: 1rem;
+}
+
+.gallery-info h3 {
+    margin: 10px 0;
+    color: #111827;
+    font-size: 1.8rem;
+}
+
+.gallery-info p {
+    margin: 0;
+    color: #6B7280;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.gallery-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #E5E7EB;
+}
+
+#pageIndicator {
+    color: #6B7280;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.gallery-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.gallery-buttons button {
+    padding: 12px 20px;
+    border: 1px solid #2563EB;
+    border-radius: 30px;
+    background: #2563EB;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.gallery-buttons button:hover:not(:disabled) {
+    background: #1D4ED8;
+}
+
+.gallery-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Responsif untuk tablet dan HP */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .documentation {
+        padding: 100px 5% 35px;
+    }
+
+    .documentation-header {
+        align-items: flex-start;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card > img,
+    .gallery-card > video {
+        height: 240px;
+    }
+
+    .gallery-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* ===== 7. FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+    background-color: var(--soft-blue);
+    color: var(--text-secondary);
+}
+
+/* ===== 8. RESPONSIVE ===== */
+@media (max-width: 700px) {
+    header {
+        padding: 16px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 6%;
+        gap: 35px;
+    }
+
+    .home-img img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .content-section {
+        margin: 0 5% 25px;
+        padding: 25px;
+    }
+}
